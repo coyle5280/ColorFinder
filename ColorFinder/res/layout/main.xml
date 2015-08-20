@@ -9,20 +9,52 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:text="@string/colorFinder"
-    android:layout_margin="5dp"
+    android:layout_margin="2dp"
+    android:layout_marginTop="10dp"
     android:gravity="center_horizontal"
     android:textSize="22sp"
     />
 <LinearLayout
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_margin="5dp"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="10dp"
+    >
+    
+    <TextView
+        android:id="@+id/redLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/red"
+    />
+    
+    <TextView
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:id="@+id/greenLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/green"
+    />
+    
+    <TextView
+        android:id="@+id/blueLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/blue"
+    />
+    
+</LinearLayout>
+    
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:gravity="center_horizontal"
     >
     
     <NumberPicker
-
         android:id="@+id/redPicker"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
