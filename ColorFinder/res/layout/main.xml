@@ -84,5 +84,17 @@
     android:layout_height="140dp"
 />
 
+<TextView
+    android:layout_margin="2dp"
+    android:id="@+id/theHexDisplay"
+    android:layout_width="fill_parent"
+    android:layout_height="45dp"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="22sp"
+/>
+
 </LinearLayout>
 

@@ -15,10 +15,14 @@ public class MainActivity extends Activity {
 
     TextView theColorView;
 
+    TextView theHexView;
+
     int theCombinedColor;
 
     final int max = 255;
     final int min = 0;
+
+    String hex;
 
     /**
      * Called when the activity is first created.
@@ -40,6 +44,7 @@ public class MainActivity extends Activity {
         blue = (NumberPicker) findViewById(R.id.bluePicker);
 
         theColorView = (TextView) findViewById(R.id.theColorDisplay);
+        theHexView = (TextView) findViewById(R.id.theHexDisplay);
 
         //Set Pickers Max Value
         red.setMaxValue(max);
@@ -59,6 +64,12 @@ public class MainActivity extends Activity {
         theCombinedColor = Color.rgb(red.getValue(),
                 green.getValue(), blue.getValue());
         setTextViewColor(theCombinedColor);
+        hex = Integer.toHexString(Color.rgb(red.getValue(),
+                green.getValue(), blue.getValue()));
+
+        theHexView.setTextColor(Color.rgb(red.getValue(),
+                green.getValue(), blue.getValue()));
+        theHexView.setText("HEX Value #" + hex.toUpperCase().substring(2));
 
         // Listener for the NumberPicker Red
         red.setOnValueChangedListener(new OnValueChangeListener() {
@@ -68,6 +79,12 @@ public class MainActivity extends Activity {
                 theCombinedColor = Color.rgb(red.getValue(),
                         green.getValue(), blue.getValue());
                 setTextViewColor(theCombinedColor);
+                hex = Integer.toHexString(Color.rgb(red.getValue(),
+                        green.getValue(), blue.getValue()));
+
+                theHexView.setTextColor(Color.rgb(red.getValue(),
+                        green.getValue(), blue.getValue()));
+                theHexView.setText("HEX Value #" + hex.toUpperCase().substring(2));
 
             }
         });
@@ -79,6 +96,13 @@ public class MainActivity extends Activity {
                 theCombinedColor = Color.rgb(red.getValue(),
                         green.getValue(), blue.getValue());
                 setTextViewColor(theCombinedColor);
+                hex = Integer.toHexString(Color.rgb(red.getValue(),
+                        green.getValue(), blue.getValue()));
+
+                theHexView.setTextColor(Color.rgb(red.getValue(),
+                        green.getValue(), blue.getValue()));
+                theHexView.setText("HEX Value #" + hex.toUpperCase().substring(2));
+
             }
         });
 
@@ -90,6 +114,13 @@ public class MainActivity extends Activity {
                 theCombinedColor = Color.rgb(red.getValue(),
                         green.getValue(), blue.getValue());
                 setTextViewColor(theCombinedColor);
+                hex = Integer.toHexString(Color.rgb(red.getValue(),
+                        green.getValue(), blue.getValue()));
+
+                theHexView.setTextColor(Color.rgb(red.getValue(),
+                        green.getValue(), blue.getValue()));
+                theHexView.setText("HEX Value #" + hex.toUpperCase().substring(2));
+
             }
         });
     }
