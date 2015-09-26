@@ -1,8 +1,11 @@
 package Color.Finder.Assignment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TextView;
@@ -17,12 +20,14 @@ public class MainActivity extends Activity {
 
     TextView theHexView;
 
-    int theCombinedColor;
+    static int theCombinedColor;
 
     final int max = 255;
     final int min = 0;
 
     String hex;
+    
+    boolean wasCalled = false;
 
     /**
      * Called when the activity is first created.
@@ -31,6 +36,15 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Intent intent = getIntent();
+        wasCalled  = intent.getExtras().getBoolean("calledByProgram");
+
+        
+        if(wasCalled){
+            Button finishButton = (Button) findViewById(R.id.finishButton);
+            finishButton.setVisibility(View.VISIBLE);
+        }
+    
         setupNumberPickers();
 
     }
@@ -132,5 +146,18 @@ public class MainActivity extends Activity {
     public void setTextViewColor(int colorToSet) {
         theColorView.setBackgroundColor(colorToSet);
     }
+
+    public void finishActivity(View v){
+        Intent _resultColor = new Intent();
+        _resultColor.putExtra("color", theCombinedColor);
+        setResult(RESULT_OK, _resultColor);
+        finish();
+        
+    }
+
+    
+
+
+
 
 }
